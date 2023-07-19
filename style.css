@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&family=Ubuntu+Mono:wght@700&family=Work+Sans:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    font-size: 62.5%;
+}
+
+.main{
+    width: 100%;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+}
+
+.box{
+    width: 70%;
+    height: 45%;
+    background-color: rgba(128, 206, 255, 0.8);
+    backdrop-filter: blur();
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 30px 30px 30px 30px;
+    border: 2px solid rgba(128, 206, 255, 1);
+    box-shadow: 0px 0px 50px 2px rgb(0, 157, 255);
+}
+
+.clock{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.clock span{
+    font-size: 18rem;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    width: 20rem;
+}
+
+.clock span::after{
+    font-size: 2rem;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    letter-spacing: 4px;
+    margin-left: 13px;
+
+}
+
+#hrs::after{
+    content: "Hours";
+} 
+#min::after{
+    content: "Minutes";
+} 
+#sec::after{
+    content: "Seconds";
+} 
+
+
+.backVid{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .backVid{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9){
+    .backVid{
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:1500px){
+    .clock span{
+        font-size: 12rem;
+    }
+
+    .clock span::after{
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width:600px){
+    .clock span{
+        font-size: 6rem;
+    }
+    .clock span::after{
+        font-size: 0.8rem;
+        margin-left: 0;
+    }
+}
